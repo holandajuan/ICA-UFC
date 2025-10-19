@@ -34,7 +34,7 @@ O notebook também padroniza variáveis, aplica codificação para atributos cat
 
 ## Principais bibliotecas
 
-`pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy` *(e eventualmente `scikit-learn` para utilidades compatíveis com PCA/padronização, caso desejado)*.
+`pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
 
 ---
 
