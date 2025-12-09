@@ -95,7 +95,7 @@ Cada modelo é analisado por meio de:
 3. Treinamento dos modelos;
 4. Avaliação no conjunto de teste;
 5. Comparação entre:
-   - Implementação manual (Scratch);
+   - Implementação manual;
    - Implementação com `scikit-learn`.
 
 ---
