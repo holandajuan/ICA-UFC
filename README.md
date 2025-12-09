@@ -1,4 +1,4 @@
-# Análise Exploratória: "Obesity or CVD risk" (Kaggle)
+# HW 1 — Análise Exploratória: "Obesity or CVD risk" (Kaggle)
 
 ## Autores
 
@@ -9,61 +9,107 @@
 
 ---
 
-## Sobre o trabalho
+## Sobre o trabalho (HW 1 — EDA)
 
-Este repositório contém um estudo de **Análise Exploratória de Dados (EDA)** sobre o dataset **"Obesity or CVD risk (Classify/Regressor/Cluster)"**, do Kaggle.
+Este repositório contém inicialmente um estudo de **Análise Exploratória de Dados (EDA)** sobre o dataset **"Obesity or CVD risk (Classify/Regressor/Cluster)"**, do Kaggle.
 
-O objetivo foi **pré-processar os dados** e **extrair insights** a partir de diferentes técnicas descritivas e visuais, incluindo:
+O objetivo do HW 1 foi **pré-processar os dados** e **extrair insights iniciais** a partir de diferentes técnicas estatísticas descritivas e visuais, incluindo:
 
-- **Análise monovariada** (visões marginais por variável);
+- **Análise monovariada** (distribuições, histogramas, boxplots);
 - **Análise condicional por classe** (comparações por níveis de obesidade);
-- **Análise bivariada** (correlações, dispersões com coloração por classe);
+- **Análise bivariada** (correlações, gráficos de dispersão com coloração por classe);
 - **PCA (Principal Component Analysis)** para síntese **multivariada** e visualização em componentes principais.
 
-O notebook também padroniza variáveis, aplica codificação para atributos categóricos quando necessário e organiza as visualizações para apoiar interpretações epidemiologicamente coerentes (hábitos de vida, medidas antropométricas e níveis de obesidade).
+O notebook realiza a padronização das variáveis, aplica codificação para atributos categóricos quando necessário e organiza as visualizações de forma a permitir interpretações epidemiologicamente coerentes (hábitos de vida, medidas antropométricas e níveis de obesidade).
 
 ---
 
 ## Estrutura do repositório
 
-- **`main.ipynb`** — notebook principal com todo o fluxo (carregamento, limpeza, EDA, PCA e geração de figuras).
-- **`ObesityDataSet.csv`** — arquivo de dados utilizado no notebook (do dataset Kaggle "Obesity or CVD risk").
-- **(Opcional)** `figures/` — pasta para exportar os gráficos gerados.
+- **`main.ipynb`** — notebook principal com todo o fluxo de EDA, PCA e geração das figuras.
+- **`ObesityDataSet.csv`** — arquivo de dados utilizado (dataset Kaggle "Obesity or CVD risk").
+- **`HWS/`** — pasta contendo os trabalhos e implementações complementares da disciplina.
+- **`figures/`** — pasta para exportação dos gráficos.
 
 ---
 
 ## Principais bibliotecas
 
-`pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
+`pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `scikit-learn`
 
 ---
 
 ## Como executar (Google Colab)
 
 1. **Baixe** os arquivos `main.ipynb` e `ObesityDataSet.csv` deste repositório.
-
-2. **Acesse** [Google Colab](https://colab.research.google.com/) e **abra** o arquivo `main.ipynb`.
-
-3. No Colab, no painel **Arquivos** (ícone de pasta à esquerda), **faça o upload** do `ObesityDataSet.csv` para o diretório de trabalho do notebook.
-
+2. **Acesse** o [Google Colab](https://colab.research.google.com/) e **abra** o arquivo `main.ipynb`.
+3. No Colab, no painel **Arquivos**, **faça o upload** do `ObesityDataSet.csv`.
 4. **Execute as células na ordem em que aparecem.**
-   - O notebook já contém as etapas de leitura do CSV, checagem de integridade/tipagem, sumarização estatística, geração de gráficos e PCA.
-
-5. Os **gráficos e tabelas** são renderizados no próprio notebook; se houver exportação para arquivos, eles ficarão disponíveis no painel **Arquivos** do Colab (você pode baixá-los localmente).
 
 ---
 
-## Resultados esperados (resumo)
+## Resultados esperados — HW 1 (EDA)
 
-- Caracterização das distribuições (tendência central, dispersão, assimetria) por variável;
-- Comparações **por classe de obesidade** para variáveis-chave (ex.: `Weight`, `FAF`, `CH2O`);
-- Correlações e pares relevantes em **análise bivariada**;
-- Projeção **PCA (PC1 × PC2)**, evidenciando eixos latentes interpretáveis (adiposidade e atividade/sedentarismo) e a organização relativa das classes.
+- Caracterização das distribuições (tendência central, dispersão, assimetria);
+- Comparações por classe de obesidade para variáveis-chave;
+- Correlações bivariadas relevantes;
+- Projeção PCA evidenciando eixos latentes de adiposidade e estilo de vida.
 
 ---
 
-## Referência do dataset
+# HW 2 — Modelos de Regressão e Aprendizado Supervisionado
+
+## Objetivo da HW 2
+
+O HW 2 tem como objetivo a **modelagem preditiva da variável alvo** a partir das variáveis explicativas do dataset, empregando **modelos de regressão clássicos e métodos baseados em redução de dimensionalidade**.
+
+Busca-se:
+- Avaliar o desempenho preditivo dos modelos;
+- Comparar implementações **manuais (do zero)** com bibliotecas de referência;
+- Analisar estabilidade, erro médio e capacidade de generalização.
+
+---
+
+## Modelos Implementados
+
+No HW 2 são estudados e comparados os seguintes modelos:
+
+- **Regressão Linear Múltipla**
+- **Regressão Ridge** (com regularização L2)
+- **Regressão por Componentes Principais (PCR)**
+- **Partial Least Squares (PLS)**
+- **Redes Neurais para Regressão**
+
+Cada modelo é analisado por meio de:
+- Erro Quadrático Médio (RMSE);
+- Coeficiente de Determinação (R²);
+- Comparação entre valores reais e preditos;
+- Validação cruzada.
+
+---
+
+## Metodologia Geral do HW 2
+
+1. Separação dos dados em **conjunto de treino (80%) e teste (20%)**;
+2. **Padronização das variáveis** (quando aplicável);
+3. Treinamento dos modelos;
+4. Avaliação no conjunto de teste;
+5. Comparação entre:
+   - Implementação manual (Scratch);
+   - Implementação com `scikit-learn`.
+
+---
+
+## Resultados Esperados — HW 2
+
+- Verificação da capacidade preditiva dos modelos;
+- Avaliação do impacto da redução de dimensionalidade (PCR e PLS);
+- Análise da influência da regularização na regressão Ridge;
+- Comparação de desempenho entre métodos lineares e redes neurais.
+
+---
+
+## Referência do Dataset
 
 - **Kaggle** — [Obesity or CVD risk (Classify/Regressor/Cluster)](https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster)
 
-  
